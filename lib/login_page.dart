@@ -44,40 +44,28 @@ class _LoginPageState extends State<LoginPage> {
         foregroundColor: Colors.black,
         title: const Center(child: Text('Login')),
       ),
-      body: Stack(
-        fit: StackFit.expand, // Makes the image take up the entire screen
-        children: [
-          // Background Image
-          Image.asset(
-            'assets/thedogmeme.jpg', // Replace with your image path
-            fit: BoxFit.cover, // Ensure the image covers the screen
-          ),
-          // Content (Login form)
-          Container(
-            color:
-                Colors.black.withOpacity(0.5), // Slight overlay for readability
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
-                  controller: usernameController,
-                  decoration: const InputDecoration(labelText: 'Username'),
-                ),
-                TextField(
-                  controller: passwordController,
-                  obscureText: true,
-                  decoration: const InputDecoration(labelText: 'Password'),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: login,
-                  child: const Text('Login'),
-                ),
-              ],
+      body: Container(
+        color: Colors.white, // Set the background color to red
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              controller: usernameController,
+              decoration: const InputDecoration(labelText: 'Username'),
             ),
-          ),
-        ],
+            TextField(
+              controller: passwordController,
+              obscureText: true,
+              decoration: const InputDecoration(labelText: 'Password'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: login,
+              child: const Text('Login'),
+            ),
+          ],
+        ),
       ),
     );
   }
